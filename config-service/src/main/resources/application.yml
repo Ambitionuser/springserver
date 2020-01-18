@@ -1,0 +1,21 @@
+eureka:
+    client:
+        service-url:
+            defaultZone: http://localhost:35001/eureka/
+    instance:
+        instance-id: ${spring.application.name}:${spring.cloud.client.ip-address}:${server.port}
+        preferIpAddress: true
+server:
+    port: 35004
+spring:
+    application:
+        name: config-server
+    cloud:
+        config:
+            label: master
+            server:
+                git:
+                    password: Cyn792342548
+                    search-paths: config-server
+                    uri: https://github.com/Ambitionuser/config-server.git
+                    username: 792342548@qq.com
